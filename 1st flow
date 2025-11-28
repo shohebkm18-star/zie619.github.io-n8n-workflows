@@ -1,0 +1,590 @@
+{
+  "name": "FREE LEAD GEN WORKFLOW",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1myqDTX_NBWoGO8k_k6SyNYYfFVmxf-G1eNiRvCDDMwo",
+          "mode": "list",
+          "cachedResultName": "Linkedin Leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1myqDTX_NBWoGO8k_k6SyNYYfFVmxf-G1eNiRvCDDMwo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1myqDTX_NBWoGO8k_k6SyNYYfFVmxf-G1eNiRvCDDMwo/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "is_done?": "Done",
+            "email": "={{ $json.accepted[0] }}"
+          },
+          "matchingColumns": [
+            "email"
+          ],
+          "schema": [
+            {
+              "id": "first_name",
+              "displayName": "first_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "last_name",
+              "displayName": "last_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "emailVerificationResult",
+              "displayName": "emailVerificationResult",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "mobile",
+              "displayName": "mobile",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "linkedin_url",
+              "displayName": "linkedin_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "linkedin_org",
+              "displayName": "linkedin_org",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "organization_name",
+              "displayName": "organization_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "domain",
+              "displayName": "domain",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "employee_count",
+              "displayName": "employee_count",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "city",
+              "displayName": "city",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "state",
+              "displayName": "state",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "country",
+              "displayName": "country",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "is_waterfall",
+              "displayName": "is_waterfall",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "is_done?",
+              "displayName": "is_done?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "00862ce8-0fe6-4474-bc4f-888d7a69ebe8",
+      "name": "Append or update row in sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        1456,
+        1104
+      ],
+      "typeVersion": 4.7,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "WHYdDs6Pqbl8ZPgD",
+          "name": "Google Sheets account 7"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e8182ef2-8755-4ff8-9ecb-4185ae782cde",
+              "name": "Send Time",
+              "type": "string",
+              "value": "={{$now.toFormat(\"dd-MM-yyyy (h:mm:s a)\")}}"
+            },
+            {
+              "id": "4b3a6df0-eebd-46db-bc18-a26f85d7fef4",
+              "name": "Email Address",
+              "type": "string",
+              "value": "={{ $('Loop Over Items').item.json['Email Address'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f2a7f20a-f670-4c13-8b5e-01c3c6f2e18e",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1024,
+        816
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-mini-2025-08-07",
+          "mode": "list",
+          "cachedResultName": "gpt-5-mini-2025-08-07"
+        },
+        "options": {}
+      },
+      "id": "0a209b87-556d-49e8-b0ee-471e030432d0",
+      "name": "OpenAI Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        736,
+        976
+      ],
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "Jf9izdgoEnpdOpJu",
+          "name": "LegadoBois"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "text": "=You are a perfect cold mail generator for a Workflow Process Automation Specialist (Lead Generation) Agency named \"RapidXAI\"\n\nHere&apos;s the Information about the Recipient:\n\nCompany Name:  {{ $json.organization_name }}\nBusiness Type: HR and Recruting\nEmail Style / Email Tune : High Converting Leads and Sales Email, with elite wiritng skills\n\nThe Email style is given just to understand how the mail will be.\n\nInstructions:\n\n1. Always start with giving a greting to the Company like Hi Company Name,\n2. Always use We not I,\n3. Mail have to be professional, Clean and to the point,\n4. At last give a Signeture Like:\n\n  Shreyas Raj\n  Founder CEO RapidXAI\n\n\nWe Sell AI automation services and AI Voice Agent, Chatbot and Workflow Automations.\n\n🧠 PHASE 1: BUILD THE OFFER (The Hormozi Core)\nBefore you ever write, your email’s success lives or dies by the offer.\nPick a clear transformation\n→ What outcome can your audience see, feel, or imagine getting?\nStack value until it’s a no-brainer\nUse the Value Equation:\nDream Outcome × Perceived Likelihood of Achievement ÷\n(Time Delay × Effort & Sacrifice)\nThe more you amplify the dream and reduce the work, the more persuasive the offer.\nAdd urgency & scarcity\n“Only 12 spots left.”\n“Closes Friday at midnight.”\n“Prices go up after launch.”\nRisk reversal\nGuarantee results or refund.\nGive a free audit, consult, or mini result in advance.\n⚙️ PHASE 2: FRAME THE MESSAGE (TRW + Winner’s Writing Process)\nAsk the 4 questions from the Winner’s Writing Process:\nWho am I talking to?\nWhere are they now (emotionally, mentally, situationally)?\nWhat do I want them to do?\nWhat do they need to see, feel, or experience to take that action?\nThen write every email like a sniper shot at one human.\nYou’re not writing to a list — you’re writing to a person at 2 AM on their phone.\n🔥 PHASE 3: CRAFT THE COPY (CIA Persuasion + Dopamine Flow)\n1. HOOK (first line = dopamine trigger)\nInterrupt pattern. Use curiosity, novelty, or tension.\nExample:\n“Ever notice how your brain sabotages you right before you win?”\n“Yesterday I almost quit everything — then this happened.”\n“You want more clients, but you’re secretly terrified of getting them.”\nUse the Mega Hook Library for inspiration (How to, Why, What, Warning, POV, Hot Take, etc.)\n2. PAIN + DESIRE\nAgitate the gap between where they are and where they wish they were.\nMake them feel it — physically.\nExample:\n“You wake up, check your phone… zero new leads again. That little gut punch hits before your first coffee.”\n3. SOLUTION / PROOF\nReveal your offer as the escape hatch.\nShow proof or a mini case study.\nExample:\n“Mark tried this exact system. 3 days later he booked 4 calls. No new followers, no fancy funnels.”\n4. CALL TO ACTION (simple, human, direct)\nDon’t overcomplicate.\n“Hit reply with ‘INFO’.”\n“Click here before midnight.”\n“Book your free strategy call.”\n🧩 PHASE 4: EMOTIONAL ENGINEERING (Will They Buy/Act?)\nEvery email should move these 3 levers:\nDesire — show them what they want and make it vivid.\nCertainty — prove your idea actually works.\nTrust — prove you are the one who can deliver.\nIf even one lever is weak, they won’t act.\nYour email must raise all 3 above their thresholds.\n⚡ PHASE 5: WRITE THE 100-WORD EMAIL (The Natural Flow)\nStructure:\nHook (1 line)\nPain / Emotion (2–3 lines)\nOffer / Solution (2–3 lines)\nCTA (1 line)\nExample:\nYou ever sit staring at your screen, pretending to work — but deep down you know you’re just avoiding the one move that would actually make you money?\nThat was me last year. Then I built a stupidly simple 3-step system that finally got clients messaging me.\nIt’s free to try, and it works embarrassingly well.\nClick here before I take it down → [link]\n💣 PHASE 6: SOUND HUMAN (ArnoBot Style)\nWrite how you talk, not how you “market.”\nUse short, punchy sentences.\nMix long and short lines.\nDrop the corporate “we” — use you, me, let’s.\nSwear if it fits. Humor is a weapon.\nUse emojis strategically to keep rhythm (🔥, 💰, 😅, 👀).\n🧠 PHASE 7: TEST & OPTIMIZE\nSubject line: 40% of results come from it. Use curiosity, tension, or a benefit.\nExample:\n“The mistake that cost me 6 clients last month”\n“Try this before giving up”\n“I didn’t expect this to work (but it did)”\nOne CTA max per email.\nA/B test hooks and CTAs weekly.\nTrack replies & click rates — that’s how you calibrate your persuasion radar.\nWould you like me to build you a plug-and-play persuasive email template pack (including 5 versions: curiosity, authority, pain-driven, proof-driven, and scarcity-based) — each under 100 words and ready to paste into your campaign?\n\n\nThis is an Exmaple Email Example:\n\nMeet Your Next Top Recruiter\n\nEmail Body:\nHey first_name,\n\nI saw Robert Half’s New York Midtown team has been driving full-steam across finance, tech & admin hiring — impressive that you’re handling such a broad spectrum in the city that never sleeps.\n\nWe build AI Voice Agents that talk, qualify candidates, book calls and follow-up — like a real recruiter, only 24/7, ultra precise and pain free.\n\nWant to see how you could offload 60 %+ of your call volume and let your humans focus on winning the big placements?\n\nBest,\nShreyas Raj\nFounder & CEO\nRapidXAI Solutions\n\n\n\n\nHere are all the deets you need about the prsopect, Email subject lines need to be 3-5 words MAX.\n\n\n\n{{ JSON.stringify($json.data) }}\n\n\n\nThe email should be max 100 words, use high reasoning and Maximum Verbosity\n",
+        "attributes": {
+          "attributes": [
+            {
+              "name": "Mail Subject",
+              "description": "Eye catchy mail Subject for the cold mail, ",
+              "required": true
+            },
+            {
+              "name": "Mail Body",
+              "description": "=body message of the mail, a perfect and clear cold mail.",
+              "required": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "70b711ba-bb74-4ada-b94f-4e0f133ad855",
+      "name": "Information Extractor1",
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "position": [
+        736,
+        816
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "minutes"
+      },
+      "id": "990fd62c-ddaf-4c0a-bfe2-e0c0d8594ec1",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "position": [
+        512,
+        816
+      ],
+      "webhookId": "dafc76c4-972d-49fd-8f1a-546d7b0e9eb5",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "bddd9821-cdda-41a3-ae0c-fe79c6562001",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        368,
+        800
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "fromEmail": "shreyas@rapidXAI.com",
+        "toEmail": "={{ $('Aggregate').item.json.data[0].email }}",
+        "subject": "={{ $('Information Extractor1').item.json.output['Mail Subject'] }}",
+        "emailFormat": "text",
+        "text": "={{ $('Information Extractor1').item.json.output['Mail Body'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        1200,
+        832
+      ],
+      "id": "88311ce3-ad01-43b4-adf4-27a1ea91deca",
+      "name": "Send email",
+      "webhookId": "31d36a50-7224-46b2-9611-a31afe54d5f7",
+      "credentials": {
+        "smtp": {
+          "id": "1o9p6v7DOc2Kutbj",
+          "name": "SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6933824863",
+        "text": "Email Sending is done",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1520,
+        832
+      ],
+      "id": "f79aaf4f-87a7-4db3-9b5d-de01dfe60ba8",
+      "name": "Send a text message",
+      "webhookId": "68437058-64fc-4f7b-93bb-976edec67d4e",
+      "credentials": {
+        "telegramApi": {
+          "id": "nrLzpgDHDgJ1Bkqu",
+          "name": "Telegram account 3"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        272
+      ],
+      "id": "1dbb85f4-596c-4b98-9409-814f8f98fc1b",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1myqDTX_NBWoGO8k_k6SyNYYfFVmxf-G1eNiRvCDDMwo",
+          "mode": "list",
+          "cachedResultName": "Linkedin Leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1myqDTX_NBWoGO8k_k6SyNYYfFVmxf-G1eNiRvCDDMwo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1myqDTX_NBWoGO8k_k6SyNYYfFVmxf-G1eNiRvCDDMwo/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -128,
+        544
+      ],
+      "id": "c08edbff-cd02-4965-a5e1-2acdfcbbfecc",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "WHYdDs6Pqbl8ZPgD",
+          "name": "Google Sheets account 7"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d0f5bdb0-71b2-433a-a538-ba0d56c3e255",
+              "leftValue": "={{ $json.email }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        80,
+        560
+      ],
+      "id": "f70b7e96-1098-4b13-8dc0-98db19378979",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        528,
+        992
+      ],
+      "id": "c08885fa-f3eb-426a-b77e-df94c76d3422",
+      "name": "Aggregate"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Append or update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Information Extractor1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Information Extractor1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send email": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Information Extractor1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ce539b88-0255-48dc-8a93-3caead6051af",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "eb175be953d40ca80206e674e53b5c1c6c68506d0fb11d55bb84a14aa8f4fa18"
+  },
+  "id": "Zs8SSTSoIF76HLRe",
+  "tags": []
+}
